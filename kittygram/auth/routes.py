@@ -69,6 +69,7 @@ def confirm(token):
     else:
         # TODO: add resend_confirmation option when user config view is implemented
         flash('The confirmation token is invalid or has expired.')
+        return render_template('expired.html'), 401
     return render_template('auth/confirmation.html', token=token)
 
 @login_required

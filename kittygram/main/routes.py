@@ -66,6 +66,8 @@ def upload():
         return redirect('/')
     return render_template('upload.html', form=form)
 
+# TODO: add delete post endpoint
+
 @main.route('/user/<username>')
 def user(username):
     user = User.query.filter_by(username=username).first()
